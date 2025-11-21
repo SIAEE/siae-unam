@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIAE - Menú</title>
+  <style>
+    :root {
+      --azul-unam: #003366;
+      --dorado-unam: #c49f1d;
+      --blanco: #ffffff;
+      --gris-claro: #f8f8f8;
+      --gris-medio: #999999;
+      --gris-oscuro: #555555;
+      --fuente-principal: 'Arial', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0; padding: 0;
+      height: 100%;
+      font-family: var(--fuente-principal);
+      background-color: var(--gris-claro);
+      color: var(--azul-unam);
+    }
+
+    header {
+      background: linear-gradient(90deg, #001f3f 0%, #003366 40%, #00509e 70%, #003366 100%);
+      color: var(--blanco);
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      border-bottom: 5px solid var(--dorado-unam);
+    }
+
+    header .titulo {
+      text-align: center;
+      line-height: 1.1;
+      max-width: 600px;
+    }
+
+    header .titulo h1 {
+      font-weight: normal;
+      font-size: 1.7rem;
+      margin: 0;
+      text-shadow: 0 0 3px #000000bb;
+    }
+
+    header .titulo h2 {
+      font-weight: normal;
+      font-size: 1.1rem;
+      margin: 0;
+      letter-spacing: 1.3px;
+      font-style: italic;
+      text-shadow: 0 0 3px #000000bb;
+    }
+
+    header img.logo {
+      height: 75px;
+    }
+
+    nav {
+      background-color: var(--azul-unam);
+      border-bottom: 5px solid var(--dorado-unam);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: var(--blanco);
+      padding: 12px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-bottom: 4px solid transparent;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+      font-weight: 600;
+      border-radius: 4px 4px 0 0;
+    }
+
+    nav button:hover:not(:disabled) {
+      background-color: #002244;
+      border-bottom-color: var(--dorado-unam);
+    }
+
+    nav button:disabled {
+      color: var(--gris-medio);
+      cursor: default;
+    }
+
+    nav button.active {
+      background-color: #001a33;
+      border-bottom-color: var(--dorado-unam);
+    }
+
+    main {
+      display: flex;
+      gap: 30px;
+      padding: 30px 40px;
+      background: var(--blanco);
+      margin: 20px 40px;
+      border-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      min-height: 300px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .imagen-izquierda {
+      flex: 0 0 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      color: var(--azul-unam);
+    }
+
+    .imagen-izquierda img {
+      max-width: 140px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+
+    .contenido-calificaciones {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    main h3 {
+      margin-top: 0;
+      font-weight: normal;
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--dorado-unam);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    main h4.titulo-materia {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        margin-top: 0;
+        color: var(--azul-unam);
+    }
+
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      margin: 20px auto;
+    }
+
+    thead {
+      background-color: var(--azul-unam);
+      color: var(--blanco);
+    }
+
+    th, td {
+      border: 1px solid var(--gris-medio);
+      padding: 12px 15px;
+      text-align: center;
+    }
+    
+    tbody tr:nth-child(even) {
+      background-color: #f0f5fb;
+    }
+    
+    tfoot td {
+        text-align: center;
+        font-weight: normal;
+        font-size: 1rem; /* <<< CAMBIO: Tamaño de fuente reducido */
+        background-color: #f0f5fb;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/unam.png" alt="Logo UNAM" class="logo" />
+    <div class="titulo">
+      <h1>FACULTAD DE MEDICINA – UNAM</h1>
+      <h2>Sistema Integral de Administración Escolar</h2>
+    </div>
+    <img src="img/medicina.png" alt="Logo Facultad de Medicina" class="logo" />
+  </header>
+
+  <nav>
+    <button id="btnCalificaciones" class="active">Consultar calificaciones</button>
+    <button id="btnDatos" disabled>Datos personales</button>
+    <button id="btnCerrarSesion">Cerrar sesión</button>
+  </nav>
+
+  <main>
+    <div class="imagen-izquierda">
+      <img src="img/imagen-izquierda.png" alt="Imagen izquierda" />
+      <div>
+        <p><strong>Número de cuenta:</strong><br>3200227026</p>
+        <p><strong>Nombre:</strong><br>Laisha Arleth<br>Ramirez<br>Francisco</p>
+        <p><strong>Plan de Estudio:</strong><br>MEDICO CIRUJANO PLAN 2010</p>
+      </div>
+    </div>
+
+    <div class="contenido-calificaciones">
+      <h4 class="titulo-materia">INFORMÁTICA BIOMÉDICA II</h4>
+      <h3>Bloque 1</h3>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Calificación Departamental</th>
+              <th>Calificación Docente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8.4</td>
+              <td>9.7</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Total: 9.05</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    
+  </main>
+
+  <script>
+    const btnCerrarSesion = document.getElementById('btnCerrarSesion');
+    
+    btnCerrarSesion.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

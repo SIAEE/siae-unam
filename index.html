@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIAE - Facultad de Medicina UNAM</title>
+  <style>
+    :root {
+      --azul-unam: #003366;
+      --dorado-unam: #c49f1d;
+      --blanco: #ffffff;
+      --gris-claro: #f8f8f8;
+      --gris-medio: #999999;
+      --fuente-principal: 'Arial', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--gris-claro);
+      font-family: var(--fuente-principal);
+      color: var(--azul-unam);
+    }
+
+    header {
+      /* Degradado metálico azul estilo original */
+      background: linear-gradient(90deg, #001f3f 0%, #003366 40%, #00509e 70%, #003366 100%);
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      border-bottom: 5px solid var(--dorado-unam);
+      position: relative;
+    }
+
+    header img.logo {
+      height: 95px;
+      flex-shrink: 0;
+    }
+
+    .titulo {
+      color: var(--blanco);
+      text-align: center;
+      line-height: 1.1;
+      user-select: none;
+      flex-grow: 1;
+      max-width: 550px;
+    }
+
+    .titulo h1 {
+      font-weight: normal;
+      font-size: 1.7rem;
+      margin: 0;
+      text-shadow: 0 0 3px #000000bb;
+    }
+
+    .titulo h2 {
+      font-weight: normal;
+      font-size: 1.1rem;
+      margin: 0;
+      letter-spacing: 1.3px;
+      font-style: italic;
+      text-shadow: 0 0 3px #000000bb;
+    }
+
+    main {
+      max-width: 400px;
+      background: var(--blanco);
+      margin: 60px auto 40px;
+      padding: 30px 40px 40px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      border-radius: 6px;
+    }
+
+    main h3 {
+      color: var(--azul-unam);
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      font-weight: bold;
+      color: var(--azul-unam);
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 1rem;
+      border: 1.5px solid var(--azul-unam);
+      border-radius: 3px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: var(--dorado-unam);
+      box-shadow: 0 0 8px var(--dorado-unam);
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      background-color: var(--azul-unam);
+      color: var(--blanco);
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+    }
+
+    button:hover {
+      background-color: #002244;
+    }
+
+    .error {
+      margin-top: 15px;
+      color: #bb0000;
+      font-weight: bold;
+      text-align: center;
+      user-select: none;
+    }
+
+    .info-text {
+      max-width: 400px;
+      margin: 0 auto 60px;
+      color: var(--azul-unam);
+      font-size: 0.85rem;
+      line-height: 1.3;
+      text-align: center;
+      user-select: none;
+      white-space: pre-wrap;
+      border-top: 1px solid var(--dorado-unam);
+      padding-top: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px 20px;
+      }
+      main {
+        margin: 40px 20px;
+        padding: 25px 20px 30px;
+      }
+      .info-text {
+        margin: 0 20px 40px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/unam.png" alt="Logo UNAM" class="logo" />
+    <div class="titulo">
+      <h1>FACULTAD DE MEDICINA – UNAM</h1>
+      <h2>Sistema Integral de Administración Escolar</h2>
+    </div>
+    <img src="img/medicina.png" alt="Logo Facultad de Medicina" class="logo" />
+  </header>
+
+  <main>
+    <h3>Iniciar sesión</h3>
+    <form id="login-form" autocomplete="off" novalidate>
+      <label for="cuenta">Número de cuenta</label>
+      <input type="text" id="cuenta" name="cuenta" placeholder="Ejemplo: 3200227026" required />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required />
+
+      <button type="submit">Entrar</button>
+      <div class="error" id="error-msg"></div>
+    </form>
+  </main>
+
+  <div class="info-text">
+    Para el NÚMERO DE CUENTA agregue un <strong>CERO</strong> a la izquierda si su generación es menor al 2000, además omita el guión que separa al dígito verificador. Por ejemplo para el número de cuenta <strong>9025888-5</strong> se tendría que escribir el número <strong>090258885</strong> en la casilla respectiva.<br><br>
+    Si aún no ha realizado cambio de CONTRASEÑA, esta corresponde a su fecha de nacimiento y tiene el siguiente formato: <strong>DDMMAAAA</strong>; en donde DD es el día, MM es el mes y AAAA el año. Por ejemplo si la fecha de nacimiento es el 29 de Marzo de 1979, la contraseña es <strong>29031979</strong>.
+  </div>
+
+  <script>
+    const form = document.getElementById('login-form');
+    const errorMsg = document.getElementById('error-msg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const cuenta = document.getElementById('cuenta').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (cuenta === '3200227026' && password === 'Manzana1') {
+        window.location.href = 'menu.html';
+      } else {
+        errorMsg.textContent = 'Número de cuenta o contraseña incorrectos';
+      }
+    });
+  </script>
+</body>
+</html>
