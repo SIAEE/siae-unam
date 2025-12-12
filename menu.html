@@ -12,6 +12,7 @@
       --gris-claro: #f8f8f8;
       --gris-medio: #999999;
       --gris-oscuro: #555555;
+      --sidebar-header: #5d6d7e; /* Gris azulado estilo referencia */
       --fuente-principal: 'Arial', sans-serif;
     }
 
@@ -27,6 +28,7 @@
       color: var(--azul-unam);
     }
 
+    /* HEADER */
     header {
       background: linear-gradient(90deg, #001f3f 0%, #003366 40%, #00509e 70%, #003366 100%);
       color: var(--blanco);
@@ -64,6 +66,7 @@
       height: 75px;
     }
 
+    /* NAV */
     nav {
       background-color: var(--azul-unam);
       border-bottom: 5px solid var(--dorado-unam);
@@ -101,6 +104,7 @@
       border-bottom-color: var(--dorado-unam);
     }
 
+    /* MAIN LAYOUT */
     main {
       display: flex;
       gap: 30px;
@@ -109,8 +113,8 @@
       margin: 20px 40px;
       border-radius: 6px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-      min-height: 300px;
-      align-items: center;
+      min-height: 450px; /* Aumentado para acomodar el nuevo diseño */
+      align-items: flex-start;
       justify-content: center;
     }
 
@@ -124,6 +128,7 @@
       font-size: 0.9rem;
       line-height: 1.3;
       color: var(--azul-unam);
+      margin-top: 20px;
     }
 
     .imagen-izquierda img {
@@ -134,35 +139,146 @@
       margin-bottom: 15px;
     }
 
+    /* NUEVO CONTENEDOR DE CALIFICACIONES (Split View) */
     .contenido-calificaciones {
       flex: 1;
-      min-width: 300px;
+      display: flex;
+      gap: 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 350px;
     }
 
-    main h3 {
-      margin-top: 0;
-      font-weight: normal;
-      font-size: 1.6rem;
-      border-bottom: 2px solid var(--dorado-unam);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      text-align: center;
+    /* COLUMNA IZQUIERDA: MENÚ ASIGNATURAS */
+    .panel-asignaturas {
+      width: 240px;
+      background-color: #ffffff;
+      border-right: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-asignaturas {
+      background-color: var(--sidebar-header);
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    .lista-botones {
+      padding: 15px 10px;
+      background-color: #f9f9f9;
+      flex-grow: 1;
+    }
+
+    .btn-materia {
+      display: block;
+      width: 100%;
+      background-color: transparent; /* Fondo transparente por defecto */
+      color: #0066cc; /* Azul brillante tipo enlace */
+      font-weight: bold;
+      text-align: left;
+      padding: 10px 15px;
+      border: 1px solid transparent;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      border-radius: 4px;
+    }
+
+    .btn-materia:hover {
+      background-color: #eef4fb;
+      text-decoration: underline;
     }
     
-    main h4.titulo-materia {
-        text-align: center;
-        font-size: 1.3rem;
+    .btn-materia.seleccionado {
+      background-color: #0066cc;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* ZONA INFERIOR DE ACCIONES (VERDE/AZUL) */
+    .panel-acciones {
+      padding: 15px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      gap: 10px;
+      background-color: #fff;
+    }
+
+    .btn-accion {
+      flex: 1;
+      padding: 8px;
+      font-size: 0.85rem;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: default; /* Desactivados visualmente por ahora */
+      text-align: center;
+    }
+
+    .btn-verde { background-color: #28a745; }
+    .btn-azul { background-color: #007bff; }
+
+
+    /* COLUMNA DERECHA: DETALLES */
+    .panel-detalles {
+      flex: 1;
+      padding: 20px 30px;
+      background-color: #fff;
+      position: relative;
+    }
+
+    .mensaje-inicial {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #888;
+      font-style: italic;
+    }
+
+    .seccion-materia {
+      display: none; /* Oculto por defecto */
+      animation: aparecer 0.3s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-detalles h3 {
+      text-align: center;
+      color: var(--azul-unam);
+      border-bottom: 2px solid var(--dorado-unam);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .bloque-titulo {
         font-weight: bold;
-        margin-bottom: 25px;
-        margin-top: 0;
         color: var(--azul-unam);
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+        border-left: 4px solid var(--azul-unam);
+        padding-left: 10px;
+        background-color: #f0f5fb;
+        padding: 5px 10px;
     }
 
     table {
-      width: 80%;
+      width: 100%;
       border-collapse: collapse;
-      font-size: 1rem;
-      margin: 20px auto;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
     }
 
     thead {
@@ -171,20 +287,20 @@
     }
 
     th, td {
-      border: 1px solid var(--gris-medio);
-      padding: 12px 15px;
+      border: 1px solid #ddd;
+      padding: 8px 10px;
       text-align: center;
     }
-    
+
     tbody tr:nth-child(even) {
-      background-color: #f0f5fb;
+      background-color: #f9f9f9;
     }
-    
-    tfoot td {
-        text-align: center;
-        font-weight: normal;
-        font-size: 1rem; /* <<< CAMBIO: Tamaño de fuente reducido */
-        background-color: #f0f5fb;
+
+    .tabla-final tfoot td {
+        background-color: #e8f0fe;
+        font-weight: bold;
+        color: var(--azul-unam);
+        font-size: 1.1rem;
     }
 
   </style>
@@ -207,7 +323,7 @@
 
   <main>
     <div class="imagen-izquierda">
-      <img src="img/imagen-izquierda.png" alt="Imagen izquierda" />
+      <img src="img/imagen-izquierda.png" alt="Foto Alumno" />
       <div>
         <p><strong>Número de cuenta:</strong><br>3200227026</p>
         <p><strong>Nombre:</strong><br>Laisha Arleth<br>Ramirez<br>Francisco</p>
@@ -216,39 +332,129 @@
     </div>
 
     <div class="contenido-calificaciones">
-      <h4 class="titulo-materia">INFORMÁTICA BIOMÉDICA II</h4>
-      <h3>Bloque 1</h3>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Calificación Departamental</th>
-              <th>Calificación Docente</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>8.4</td>
-              <td>9.7</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2">Total: 9.05</td>
-            </tr>
-          </tfoot>
-        </table>
+      
+      <div class="panel-asignaturas">
+        <div class="header-asignaturas">ASIGNATURAS</div>
+        <div class="lista-botones">
+          <button class="btn-materia" onclick="mostrarMateria('ib2', this)">
+             → INFORMÁTICA BIOMÉDICA II
+          </button>
+          <button class="btn-materia" onclick="mostrarMateria('inmuno', this)">
+             → INMUNOLOGÍA
+          </button>
+        </div>
+        <div class="panel-acciones">
+            <button class="btn-accion btn-verde">📈 Revisar desempeño</button>
+            <button class="btn-accion btn-azul">🖨 Imprimir</button>
+        </div>
+      </div>
+
+      <div class="panel-detalles" id="areaDetalles">
+        
+        <div id="mensaje-vacio" class="mensaje-inicial">
+          Seleccione una asignatura del menú izquierdo para ver el detalle.
+        </div>
+
+        <div id="ib2" class="seccion-materia">
+          <h3>INFORMÁTICA BIOMÉDICA II</h3>
+          
+          <div class="bloque-titulo">Bloque 1</div>
+          <table>
+            <thead>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>8.4</td><td>9.7</td><td><strong>9.05</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div class="bloque-titulo">Bloque 2</div>
+          <table>
+            <thead>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>9.0</td><td>10.0</td><td><strong>9.5</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
+          <table class="tabla-final">
+             <thead>
+                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO FINAL</th></tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>9.05</td>
+                     <td>9.5</td>
+                     <td style="font-weight: bold; font-size: 1.2rem;">9.3</td>
+                 </tr>
+             </tbody>
+          </table>
+        </div>
+
+        <div id="inmuno" class="seccion-materia">
+          <h3>INMUNOLOGÍA</h3>
+          
+          <div class="bloque-titulo">Calificaciones Parciales</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Evaluación Departamental (50%)</th>
+                <th>Evaluación Docente (50%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>8.2</td>
+                <td>9.0</td>
+              </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Promedio Actual: <strong>8.6</strong></td>
+                </tr>
+            </tfoot>
+          </table>
+          
+          <p style="font-size: 0.85rem; color: #666; margin-top: 20px;">
+            * La calificación mostrada es el promedio ponderado entre la evaluación departamental y la evaluación del profesor.
+          </p>
+        </div>
+
       </div>
     </div>
     
   </main>
 
   <script>
+    // Lógica para cerrar sesión
     const btnCerrarSesion = document.getElementById('btnCerrarSesion');
-    
     btnCerrarSesion.addEventListener('click', () => {
       window.location.href = 'index.html';
     });
+
+    // Lógica para pestañas de materias
+    function mostrarMateria(idMateria, btnElement) {
+        // 1. Ocultar mensaje inicial
+        document.getElementById('mensaje-vacio').style.display = 'none';
+
+        // 2. Ocultar todas las secciones de materias
+        const secciones = document.querySelectorAll('.seccion-materia');
+        secciones.forEach(sec => sec.style.display = 'none');
+
+        // 3. Quitar clase 'seleccionado' de todos los botones
+        const botones = document.querySelectorAll('.btn-materia');
+        botones.forEach(btn => btn.classList.remove('seleccionado'));
+
+        // 4. Mostrar la materia seleccionada
+        document.getElementById(idMateria).style.display = 'block';
+
+        // 5. Activar visualmente el botón presionado
+        if(btnElement) {
+            btnElement.classList.add('seleccionado');
+        }
+    }
   </script>
 </body>
 </html>
