@@ -12,7 +12,7 @@
       --gris-claro: #f8f8f8;
       --gris-medio: #999999;
       --gris-oscuro: #555555;
-      --sidebar-header: #5d6d7e; /* Gris azulado estilo referencia */
+      --sidebar-header: #5d6d7e;
       --fuente-principal: 'Arial', sans-serif;
     }
 
@@ -113,7 +113,7 @@
       margin: 20px 40px;
       border-radius: 6px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-      min-height: 450px; /* Aumentado para acomodar el nuevo diseño */
+      min-height: 450px;
       align-items: flex-start;
       justify-content: center;
     }
@@ -178,8 +178,8 @@
     .btn-materia {
       display: block;
       width: 100%;
-      background-color: transparent; /* Fondo transparente por defecto */
-      color: #0066cc; /* Azul brillante tipo enlace */
+      background-color: transparent;
+      color: #0066cc;
       font-weight: bold;
       text-align: left;
       padding: 10px 15px;
@@ -219,7 +219,7 @@
       color: white;
       border: none;
       border-radius: 4px;
-      cursor: default; /* Desactivados visualmente por ahora */
+      cursor: default;
       text-align: center;
     }
 
@@ -302,6 +302,13 @@
         color: var(--azul-unam);
         font-size: 1.1rem;
     }
+    
+    /* Footer específico para las tablas de 1 bloque con promedio */
+    tfoot td {
+        background-color: #e8f0fe;
+        font-weight: bold;
+        color: var(--azul-unam);
+    }
 
   </style>
 </head>
@@ -341,6 +348,9 @@
           </button>
           <button class="btn-materia" onclick="mostrarMateria('inmuno', this)">
              → INMUNOLOGÍA
+          </button>
+          <button class="btn-materia" onclick="mostrarMateria('introfarma', this)">
+             → INTRODUCCIÓN A LA FÁRMACOLOGÍA
           </button>
         </div>
         <div class="panel-acciones">
@@ -416,10 +426,31 @@
                 </tr>
             </tfoot>
           </table>
+        </div>
+
+        <div id="introfarma" class="seccion-materia">
+          <h3>INTRODUCCIÓN A LA FÁRMACOLOGÍA</h3>
           
-          <p style="font-size: 0.85rem; color: #666; margin-top: 20px;">
-            * La calificación mostrada es el promedio ponderado entre la evaluación departamental y la evaluación del profesor.
-          </p>
+          <div class="bloque-titulo">Bloque 1</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Evaluación Departamental (50%)</th>
+                <th>Evaluación Docente (50%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>9.4</td>
+                <td>9.8</td>
+              </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Promedio Actual: <strong>9.6</strong></td>
+                </tr>
+            </tfoot>
+          </table>
         </div>
 
       </div>
