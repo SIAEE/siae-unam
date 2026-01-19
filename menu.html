@@ -303,7 +303,6 @@
         font-size: 1.1rem;
     }
     
-    /* Footer específico para las tablas de 1 bloque con promedio */
     tfoot td {
         background-color: #e8f0fe;
         font-weight: bold;
@@ -351,6 +350,9 @@
           </button>
           <button class="btn-materia" onclick="mostrarMateria('introfarma', this)">
              → INTRODUCCIÓN A LA FÁRMACOLOGÍA
+          </button>
+          <button class="btn-materia" onclick="mostrarMateria('fisio', this)">
+             → FUNDAMENTOS DE FISIOLOGÍA HUMANA
           </button>
         </div>
         <div class="panel-acciones">
@@ -448,6 +450,31 @@
             <tfoot>
                 <tr>
                     <td colspan="2">Promedio Actual: <strong>9.6</strong></td>
+                </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div id="fisio" class="seccion-materia">
+          <h3>FUNDAMENTOS DE FISIOLOGÍA HUMANA</h3>
+          
+          <div class="bloque-titulo">Bloque 1</div>
+          <table>
+            <thead>
+              <tr>
+                <th>Evaluación Departamental (50%)</th>
+                <th>Evaluación Docente (50%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>8.6</td>
+                <td>10.0</td>
+              </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Promedio Actual: <strong>9.3</strong></td>
                 </tr>
             </tfoot>
           </table>
