@@ -360,6 +360,9 @@
           <button class="btn-materia" onclick="mostrarMateria('micro', this)">
              → MICOLOGÍA Y VIROLOGÍA
           </button>
+          <button class="btn-materia" onclick="mostrarMateria('introqx', this)">
+             → INTRODUCCIÓN A LA CIRUGÍA
+          </button>
         </div>
         <div class="panel-acciones">
             <button class="btn-accion btn-verde">📈 Revisar desempeño</button>
@@ -414,25 +417,38 @@
         <div id="inmuno" class="seccion-materia">
           <h3>INMUNOLOGÍA</h3>
           
-          <div class="bloque-titulo">Calificaciones Parciales</div>
+          <div class="bloque-titulo">Bloque 1</div>
           <table>
             <thead>
-              <tr>
-                <th>Evaluación Departamental (50%)</th>
-                <th>Evaluación Docente (50%)</th>
-              </tr>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td>8.2</td>
-                <td>9.0</td>
-              </tr>
+              <tr><td>8.2</td><td>9.0</td><td><strong>8.6</strong></td></tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Promedio Actual: <strong>8.6</strong></td>
-                </tr>
-            </tfoot>
+          </table>
+
+          <div class="bloque-titulo">Bloque 2</div>
+          <table>
+            <thead>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>7.9</td><td>9.0</td><td><strong>8.45</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
+          <table class="tabla-final">
+             <thead>
+                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO FINAL</th></tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>8.6</td>
+                     <td>8.45</td>
+                     <td style="font-weight: bold; font-size: 1.2rem;">8.5</td>
+                 </tr>
+             </tbody>
           </table>
         </div>
 
@@ -442,22 +458,35 @@
           <div class="bloque-titulo">Bloque 1</div>
           <table>
             <thead>
-              <tr>
-                <th>Evaluación Departamental (50%)</th>
-                <th>Evaluación Docente (50%)</th>
-              </tr>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td>9.4</td>
-                <td>9.8</td>
-              </tr>
+              <tr><td>9.4</td><td>9.8</td><td><strong>9.6</strong></td></tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Promedio Actual: <strong>9.6</strong></td>
-                </tr>
-            </tfoot>
+          </table>
+
+          <div class="bloque-titulo">Bloque 2</div>
+          <table>
+            <thead>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>8.2</td><td>10.0</td><td><strong>9.1</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
+          <table class="tabla-final">
+             <thead>
+                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO FINAL</th></tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>9.6</td>
+                     <td>9.1</td>
+                     <td style="font-weight: bold; font-size: 1.2rem;">9.35</td>
+                 </tr>
+             </tbody>
           </table>
         </div>
 
@@ -517,20 +546,60 @@
           <div class="bloque-titulo">Bloque 1</div>
           <table>
             <thead>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>9.0</td><td>10.0</td><td><strong>9.5</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div class="bloque-titulo">Bloque 2</div>
+          <table>
+            <thead>
+              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>8.5</td><td>10.0</td><td><strong>9.25</strong></td></tr>
+            </tbody>
+          </table>
+
+          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
+          <table class="tabla-final">
+             <thead>
+                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO FINAL</th></tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td>9.5</td>
+                     <td>9.25</td>
+                     <td style="font-weight: bold; font-size: 1.2rem;">9.4</td>
+                 </tr>
+             </tbody>
+          </table>
+        </div>
+
+        <div id="introqx" class="seccion-materia">
+          <h3>INTRODUCCIÓN A LA CIRUGÍA</h3>
+          
+          <div class="bloque-titulo">Bloque 1</div>
+          <table>
+            <thead>
               <tr>
-                <th>Evaluación Departamental (50%)</th>
-                <th>Evaluación Docente (50%)</th>
+                <th>Dept. Teórico</th>
+                <th>Dept. Práctico</th>
+                <th>Evaluación Docente</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>9.0</td>
+                <td>8.2</td>
                 <td>10.0</td>
+                <td>9.7</td>
               </tr>
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="2">Promedio Actual: <strong>9.5</strong></td>
+                    <td colspan="3">Promedio Actual: <strong>9.4</strong></td>
                 </tr>
             </tfoot>
           </table>
