@@ -139,7 +139,7 @@
       margin-bottom: 15px;
     }
 
-    /* NUEVO CONTENEDOR DE CALIFICACIONES (Split View) */
+    /* CONTENEDOR DE CALIFICACIONES */
     .contenido-calificaciones {
       flex: 1;
       display: flex;
@@ -203,7 +203,6 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
-    /* ZONA INFERIOR DE ACCIONES (VERDE/AZUL) */
     .panel-acciones {
       padding: 15px;
       border-top: 1px solid #ddd;
@@ -226,7 +225,6 @@
     .btn-verde { background-color: #28a745; }
     .btn-azul { background-color: #007bff; }
 
-
     /* COLUMNA DERECHA: DETALLES */
     .panel-detalles {
       flex: 1;
@@ -245,7 +243,7 @@
     }
 
     .seccion-materia {
-      display: none; /* Oculto por defecto */
+      display: none; 
       animation: aparecer 0.3s ease-in-out;
     }
 
@@ -302,13 +300,6 @@
         color: var(--azul-unam);
         font-size: 1.1rem;
     }
-    
-    tfoot td {
-        background-color: #e8f0fe;
-        font-weight: bold;
-        color: var(--azul-unam);
-    }
-
   </style>
 </head>
 <body>
@@ -338,31 +329,16 @@
     </div>
 
     <div class="contenido-calificaciones">
-      
       <div class="panel-asignaturas">
         <div class="header-asignaturas">ASIGNATURAS</div>
         <div class="lista-botones">
-          <button class="btn-materia" onclick="mostrarMateria('ib2', this)">
-             → INFORMÁTICA BIOMÉDICA II
-          </button>
-          <button class="btn-materia" onclick="mostrarMateria('inmuno', this)">
-             → INMUNOLOGÍA
-          </button>
-          <button class="btn-materia" onclick="mostrarMateria('introfarma', this)">
-             → INTRODUCCIÓN A LA FÁRMACOLOGÍA
-          </button>
-          <button class="btn-materia" onclick="mostrarMateria('fisio', this)">
-             → FUNDAMENTOS DE FISIOLOGÍA HUMANA
-          </button>
-          <button class="btn-materia" onclick="mostrarMateria('salud2', this)">
-             → SALUD PÚBLICA II
-          </button>
-          <button class="btn-materia" onclick="mostrarMateria('micro', this)">
-             → MICOLOGÍA Y VIROLOGÍA
-          </button>
-          <button class="btn-materia" onclick="mostrarMateria('introqx', this)">
-             → METODOLOGÍA QUIRÚRGICA
-          </button>
+          <button class="btn-materia" onclick="mostrarMateria('ib2', this)">→ INFORMÁTICA BIOMÉDICA II</button>
+          <button class="btn-materia" onclick="mostrarMateria('inmuno', this)">→ INMUNOLOGÍA</button>
+          <button class="btn-materia" onclick="mostrarMateria('introfarma', this)">→ INTRODUCCIÓN A LA FÁRMACOLOGÍA</button>
+          <button class="btn-materia" onclick="mostrarMateria('fisio', this)">→ FUNDAMENTOS DE FISIOLOGÍA HUMANA</button>
+          <button class="btn-materia" onclick="mostrarMateria('salud2', this)">→ SALUD PÚBLICA II</button>
+          <button class="btn-materia" onclick="mostrarMateria('micro', this)">→ MICOLOGÍA Y VIROLOGÍA</button>
+          <button class="btn-materia" onclick="mostrarMateria('metqx', this)">→ METODOLOGÍA QUIRÚRGICA</button>
         </div>
         <div class="panel-acciones">
             <button class="btn-accion btn-verde">📈 Revisar desempeño</button>
@@ -371,285 +347,94 @@
       </div>
 
       <div class="panel-detalles" id="areaDetalles">
-        
-        <div id="mensaje-vacio" class="mensaje-inicial">
-          Seleccione una asignatura del menú izquierdo para ver el detalle.
-        </div>
+        <div id="mensaje-vacio" class="mensaje-inicial">Seleccione una asignatura.</div>
 
         <div id="ib2" class="seccion-materia">
           <h3>INFORMÁTICA BIOMÉDICA II</h3>
-          
-          <div class="bloque-titulo">Bloque 1</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>8.4</td><td>9.7</td><td><strong>9.05</strong></td></tr>
-            </tbody>
-          </table>
-
-          <div class="bloque-titulo">Bloque 2</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>9.0</td><td>10.0</td><td><strong>9.5</strong></td></tr>
-            </tbody>
-          </table>
-
+          <div class="bloque-titulo">Bloque 1: 9.05</div>
+          <div class="bloque-titulo">Bloque 2: 9.5</div>
           <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
           <table class="tabla-final">
-             <thead>
-                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO FINAL</th></tr>
-             </thead>
-             <tbody>
-                 <tr>
-                     <td>9.05</td>
-                     <td>9.5</td>
-                     <td style="font-weight: bold; font-size: 1.2rem;">9.3</td>
-                 </tr>
-             </tbody>
+             <tbody><tr><td style="font-weight: bold; font-size: 1.2rem;">9.3</td></tr></tbody>
           </table>
         </div>
 
         <div id="inmuno" class="seccion-materia">
           <h3>INMUNOLOGÍA</h3>
-          
-          <div class="bloque-titulo">Bloque 1</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>8.2</td><td>9.0</td><td><strong>8.6</strong></td></tr>
-            </tbody>
-          </table>
-
-          <div class="bloque-titulo">Bloque 2</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>7.9</td><td>9.0</td><td><strong>8.45</strong></td></tr>
-            </tbody>
-          </table>
-
+          <div class="bloque-titulo">Bloque 1: 8.6</div>
+          <div class="bloque-titulo">Bloque 2: 8.45</div>
           <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">PROMEDIO</div>
           <table class="tabla-final">
-             <thead>
-                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO</th></tr>
-             </thead>
-             <tbody>
-                 <tr>
-                     <td>8.6</td>
-                     <td>8.45</td>
-                     <td style="font-weight: bold; font-size: 1.2rem;">8.5</td>
-                 </tr>
-             </tbody>
+             <tbody><tr><td style="font-weight: bold; font-size: 1.2rem;">8.5</td></tr></tbody>
           </table>
         </div>
 
         <div id="introfarma" class="seccion-materia">
           <h3>INTRODUCCIÓN A LA FÁRMACOLOGÍA</h3>
-          
-          <div class="bloque-titulo">Bloque 1</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>9.4</td><td>9.8</td><td><strong>9.6</strong></td></tr>
-            </tbody>
-          </table>
-
-          <div class="bloque-titulo">Bloque 2</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>8.2</td><td>10.0</td><td><strong>9.1</strong></td></tr>
-            </tbody>
-          </table>
-
+          <div class="bloque-titulo">Bloque 1: 9.6</div>
+          <div class="bloque-titulo">Bloque 2: 9.1</div>
           <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">PROMEDIO</div>
           <table class="tabla-final">
-             <thead>
-                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO</th></tr>
-             </thead>
-             <tbody>
-                 <tr>
-                     <td>9.6</td>
-                     <td>9.1</td>
-                     <td style="font-weight: bold; font-size: 1.2rem;">9.35</td>
-                 </tr>
-             </tbody>
+             <tbody><tr><td style="font-weight: bold; font-size: 1.2rem;">9.35</td></tr></tbody>
           </table>
         </div>
 
         <div id="fisio" class="seccion-materia">
           <h3>FUNDAMENTOS DE FISIOLOGÍA HUMANA</h3>
-          
-          <div class="bloque-titulo">Bloque 1</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>8.6</td><td>10.0</td><td><strong>9.3</strong></td></tr>
-            </tbody>
-          </table>
-
-          <div class="bloque-titulo">Bloque 2</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>9.1</td><td>9.8</td><td><strong>9.45</strong></td></tr>
-            </tbody>
-          </table>
-
+          <div class="bloque-titulo">Bloque 1: 9.3</div>
+          <div class="bloque-titulo">Bloque 2: 9.45</div>
           <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">PROMEDIO</div>
           <table class="tabla-final">
-             <thead>
-                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO</th></tr>
-             </thead>
-             <tbody>
-                 <tr>
-                     <td>9.3</td>
-                     <td>9.45</td>
-                     <td style="font-weight: bold; font-size: 1.2rem;">9.4</td>
-                 </tr>
-             </tbody>
+             <tbody><tr><td style="font-weight: bold; font-size: 1.2rem;">9.4</td></tr></tbody>
           </table>
         </div>
 
         <div id="salud2" class="seccion-materia">
           <h3>SALUD PÚBLICA II</h3>
-          
-          <div class="bloque-titulo">Bloque 1</div>
-          <table>
-            <thead>
-              <tr>
-                <th>Evaluación Departamental (50%)</th>
-                <th>Evaluación Docente (50%)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>8.7</td>
-                <td>10.0</td>
-              </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Promedio Actual: <strong>9.35</strong></td>
-                </tr>
-            </tfoot>
+          <div class="bloque-titulo">Bloque 1: 9.35</div>
+          <div class="bloque-titulo">Bloque 2: 9.3</div>
+          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
+          <table class="tabla-final">
+             <tbody><tr><td style="font-weight: bold; font-size: 1.2rem;">9.3</td></tr></tbody>
           </table>
         </div>
 
         <div id="micro" class="seccion-materia">
           <h3>MICOLOGÍA Y VIROLOGÍA</h3>
-          
-          <div class="bloque-titulo">Bloque 1</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>9.0</td><td>10.0</td><td><strong>9.5</strong></td></tr>
-            </tbody>
-          </table>
-
-          <div class="bloque-titulo">Bloque 2</div>
-          <table>
-            <thead>
-              <tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>8.5</td><td>10.0</td><td><strong>9.25</strong></td></tr>
-            </tbody>
-          </table>
-
-          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">PROMEDIO</div>
+          <div class="bloque-titulo">Bloque 1: 9.5</div>
+          <div class="bloque-titulo">Bloque 2: 9.15</div>
+          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
           <table class="tabla-final">
-             <thead>
-                 <tr><th>Promedio Bloque 1</th><th>Promedio Bloque 2</th><th>PROMEDIO</th></tr>
-             </thead>
-             <tbody>
-                 <tr>
-                     <td>9.5</td>
-                     <td>9.25</td>
-                     <td style="font-weight: bold; font-size: 1.2rem;">9.4</td>
-                 </tr>
-             </tbody>
+             <tbody><tr><td style="font-weight: bold; font-size: 1.2rem;">9.3</td></tr></tbody>
           </table>
         </div>
 
-        <div id="introqx" class="seccion-materia">
+        <div id="metqx" class="seccion-materia">
           <h3>METODOLOGÍA QUIRÚRGICA</h3>
-          
-          <div class="bloque-titulo">Bloque 1</div>
-          <table>
-            <thead>
-              <tr>
-                <th>Dept. Teórico</th>
-                <th>Dept. Práctico</th>
-                <th>Evaluación Docente</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>8.2</td>
-                <td>10.0</td>
-                <td>9.7</td>
-              </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3">Promedio Actual: <strong>9.4</strong></td>
-                </tr>
-            </tfoot>
+          <div class="bloque-titulo">Bloque 1: 9.4</div>
+          <div class="bloque-titulo">Bloque 2: 9.52</div>
+          <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
+          <table class="tabla-final">
+             <tbody><tr><td style="font-weight: bold; font-size: 1.2rem;">9.5</td></tr></tbody>
           </table>
         </div>
 
       </div>
     </div>
-    
   </main>
 
   <script>
-    // Lógica para cerrar sesión
     const btnCerrarSesion = document.getElementById('btnCerrarSesion');
-    btnCerrarSesion.addEventListener('click', () => {
-      window.location.href = 'index.html';
-    });
+    btnCerrarSesion.addEventListener('click', () => { window.location.href = 'index.html'; });
 
-    // Lógica para pestañas de materias
     function mostrarMateria(idMateria, btnElement) {
-        // 1. Ocultar mensaje inicial
         document.getElementById('mensaje-vacio').style.display = 'none';
-
-        // 2. Ocultar todas las secciones de materias
         const secciones = document.querySelectorAll('.seccion-materia');
         secciones.forEach(sec => sec.style.display = 'none');
-
-        // 3. Quitar clase 'seleccionado' de todos los botones
         const botones = document.querySelectorAll('.btn-materia');
         botones.forEach(btn => btn.classList.remove('seleccionado'));
-
-        // 4. Mostrar la materia seleccionada
         document.getElementById(idMateria).style.display = 'block';
-
-        // 5. Activar visualmente el botón presionado
-        if(btnElement) {
-            btnElement.classList.add('seleccionado');
-        }
+        if(btnElement) btnElement.classList.add('seleccionado');
     }
   </script>
 </body>
