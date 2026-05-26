@@ -333,7 +333,7 @@
         <div class="header-asignaturas">ASIGNATURAS</div>
         <div class="lista-botones">
           <button class="btn-materia" onclick="mostrarMateria('ib2', this)">→ INFORMÁTICA BIOMÉDICA II</button>
-          <button class="btn-materia" onclick="mostrarMateria('inmuno', this)">→ INMUNOLOGÍA</button>
+          <button class="btn-materia" onclick="mostrarMateria('inmuno', this)">→ INTRODUCCIÓN A LA INMUNOLOGÍA</button>
           <button class="btn-materia" onclick="mostrarMateria('introfarma', this)">→ INTRODUCCIÓN A LA FÁRMACOLOGÍA</button>
           <button class="btn-materia" onclick="mostrarMateria('fisio', this)">→ FUNDAMENTOS DE FISIOLOGÍA HUMANA</button>
           <button class="btn-materia" onclick="mostrarMateria('salud2', this)">→ SALUD PÚBLICA II</button>
@@ -349,6 +349,7 @@
       <div class="panel-detalles" id="areaDetalles">
         <div id="mensaje-vacio" class="mensaje-inicial">Seleccione una asignatura del menú izquierdo.</div>
 
+        <!-- INFORMÁTICA BIOMÉDICA II -->
         <div id="ib2" class="seccion-materia">
           <h3>INFORMÁTICA BIOMÉDICA II</h3>
           <div class="bloque-titulo">Bloque 1</div>
@@ -368,30 +369,45 @@
           </table>
         </div>
 
+        <!-- INTRODUCCIÓN A LA INMUNOLOGÍA (NUEVO FORMATO SOPREC) -->
         <div id="inmuno" class="seccion-materia">
-          <h3>INMUNOLOGÍA</h3>
+          <h3>INTRODUCCIÓN A LA INMUNOLOGÍA</h3>
           <div class="bloque-titulo">Bloque 1</div>
           <table>
             <thead><tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr></thead>
-            <tbody><tr><td>8.2</td><td>9.0</td><td><strong>8.6</strong></td></tr></tbody>
+            <tbody><tr><td>7.2</td><td>9.0</td><td><strong>8.1</strong></td></tr></tbody>
           </table>
           <div class="bloque-titulo">Bloque 2</div>
           <table>
             <thead><tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr></thead>
-            <tbody><tr><td>7.9</td><td>9.0</td><td><strong>8.45</strong></td></tr></tbody>
+            <tbody><tr><td>7.5</td><td>8.0</td><td><strong>7.75</strong></td></tr></tbody>
           </table>
           <div class="bloque-titulo">Bloque 3</div>
           <table>
             <thead><tr><th>Departamental (50%)</th><th>Docente (50%)</th><th>Promedio</th></tr></thead>
-            <tbody><tr><td>7.6</td><td>9.0</td><td><strong>8.3</strong></td></tr></tbody>
+            <tbody><tr><td>7.6</td><td>8.0</td><td><strong>7.8</strong></td></tr></tbody>
           </table>
+          
+          <div class="bloque-titulo">SOPREC 1</div>
+          <table>
+            <thead><tr><th>B1</th><th>B2</th><th>B3</th></tr></thead>
+            <tbody><tr><td>8.0</td><td>7.9</td><td>8.2</td></tr></tbody>
+          </table>
+
+          <div class="bloque-titulo">SOPREC 2</div>
+          <table>
+            <thead><tr><th>B1</th><th>B2</th><th>B3</th></tr></thead>
+            <tbody><tr><td>9.0</td><td>8.6</td><td>8.8</td></tr></tbody>
+          </table>
+
           <div class="bloque-titulo" style="background-color: var(--azul-unam); color: white;">CALIFICACIÓN FINAL</div>
           <table class="tabla-final">
-             <thead><tr><th>B1</th><th>B2</th><th>B3</th><th>TOTAL</th></tr></thead>
-             <tbody><tr><td>8.6</td><td>8.45</td><td>8.3</td><td style="font-weight: bold; font-size: 1.2rem;">8.45</td></tr></tbody>
+             <thead><tr><th>SOPREC B1</th><th>SOPREC B2</th><th>SOPREC B3</th><th>PROMEDIO FINAL</th></tr></thead>
+             <tbody><tr><td>9.0</td><td>8.6</td><td>8.8</td><td style="font-weight: bold; font-size: 1.2rem;">8.8</td></tr></tbody>
           </table>
         </div>
 
+        <!-- INTRODUCCIÓN A LA FÁRMACOLOGÍA -->
         <div id="introfarma" class="seccion-materia">
           <h3>INTRODUCCIÓN A LA FÁRMACOLOGÍA</h3>
           <div class="bloque-titulo">Bloque 1</div>
@@ -416,6 +432,7 @@
           </table>
         </div>
 
+        <!-- FUNDAMENTOS DE FISIOLOGÍA HUMANA -->
         <div id="fisio" class="seccion-materia">
           <h3>FUNDAMENTOS DE FISIOLOGÍA HUMANA</h3>
           <div class="bloque-titulo">Bloque 1</div>
@@ -440,6 +457,7 @@
           </table>
         </div>
 
+        <!-- SALUD PÚBLICA II -->
         <div id="salud2" class="seccion-materia">
           <h3>SALUD PÚBLICA II</h3>
           <div class="bloque-titulo">Bloque 1</div>
@@ -459,6 +477,7 @@
           </table>
         </div>
 
+        <!-- MICOLOGÍA Y VIROLOGÍA -->
         <div id="micro" class="seccion-materia">
           <h3>MICOLOGÍA Y VIROLOGÍA</h3>
           <div class="bloque-titulo">Bloque 1</div>
@@ -478,6 +497,7 @@
           </table>
         </div>
 
+        <!-- METODOLOGÍA QUIRÚRGICA -->
         <div id="metqx" class="seccion-materia">
           <h3>METODOLOGÍA QUIRÚRGICA</h3>
           <div class="bloque-titulo">Bloque 1</div>
